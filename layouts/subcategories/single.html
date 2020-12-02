@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+    <section class="single-list-container">
+        <article class="list-container" data-search="art-paintings">
+            <header class="list-header">
+                <h1 class="list-category"><a href="/categories/{{ lower .Params.category }}">{{ .Params.category }}</a></h1>
+                <h2 class="list-subcategory"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            </header>
+            <ol class="list">
+                {{ range .Params.products }}
+                <li class="list-item">
+                    <p class="product-name"><a class="product-link" href="{{ safeURL .productURL }}" rel="noopener noreferrer" target="_blank">{{ .productName }}</a></p>
+                    <p class="maker-name"><a class="maker-link" href="{{ safeURL .productMakerURL }}" rel="noopener noreferrer" target="_blank">{{ .productMaker }}</a></p>
+                </li>
+                {{ end }}
+            </ol>
+        </article>
+    </section>
+
+    <main class="grid">
+    {{ range $category := where .Site.RegularPages "Section" "categories" }}
+
+        {{ range $subcategory := where .Site.RegularPages "Section" "subcategories" }}
+        {{ if eq $subcategory.Params.category $category.Title }}
+        <article class="list-container" data-search="art-paintings">
+            <header class="list-header">
+                <h1 class="list-category"><a href="{{ $category.RelPermalink }}">{{ $category.Title }}</a></h1>
+                <h2 class="list-subcategory"><a href="{{ $subcategory.RelPermalink }}">{{ $subcategory.Title }}</a></h2>
+            </header>
+            <ol class="list">
+                {{ range first 3 $subcategory.Params.products }}
+                <li class="list-item">
+                    <p class="product-name"><a class="product-link" href="{{ safeURL .productURL }}" rel="noopener noreferrer" target="_blank">{{ .productName }}</a></p>
+                    <p class="maker-name"><a class="maker-link" href="{{ safeURL .productMakerURL }}" rel="noopener noreferrer" target="_blank">{{ .productMaker }}</a></p>
+                </li>
+                {{ end }}
+            </ol>
+        </article>
+        {{ end }}
+        {{ end }}
+
+    {{ end }}
+    </main>
+{{ end }}

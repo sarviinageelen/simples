@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  repo: "sarviinageelen/simples"
+  branch: master
+media_folder: "static/uploads"
+public_folder: "uploads"
+collections:
+  - name: "categories" # Used in routes, e.g., /admin/collections/blog
+    label: "Categories" # Used in the UI
+    folder: "content/categories" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - {label: "Category Name", name: "title", widget: "string"}
+  - name: "subcategories"
+    label: "Sub Categories"
+    folder: "content/subcategories"
+    create: true
+    fields:
+      - {label: "Sub Category Name", name: "title", widget: "string"}
+      - {label: "Main Category", name: "category", widget: "relation", collection: "categories", search_fields: ["title"], value_field: "title", display_fields: ["title"]}
+      - label: "Products"
+        name: "products"
+        widget: "list"
+        fields:
+          - { label: "Product Name", name: "productName", widget: "string" }
+          - { label: "Product URL", name: "productURL", widget: "string" }
+          - { label: "Maker Name", name: "productMaker", widget: "string" }
+          - { label: "Maker URL", name: "productMakerURL", widget: "string" }

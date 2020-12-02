@@ -1,0 +1,23 @@
+{
+  "name": "minimals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarviinageelen/minimals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarviinageelen/minimals/issues"
+  },
+  "homepage": "https://github.com/sarviinageelen/minimals#readme",
+  "dependencies": {
+    "fuse.js": "^6.4.3"
+  }
+}

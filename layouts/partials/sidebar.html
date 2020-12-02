@@ -1,0 +1,16 @@
+<nav class="sidebar">
+    <input class="search-field" type="text" placeholder="search something Sarviin">
+    <div class="categories">
+
+    {{ range $category := where .Site.RegularPages "Section" "categories" }}
+    <a class="category-link" href="{{ $category.RelPermalink }}">{{ $category.Title }}</a>
+        {{ range $subcategory := where .Site.RegularPages "Section" "subcategories" }}
+        {{ if eq $subcategory.Params.category $category.Title }}
+        <a class="subcategory-link" href="{{ $subcategory.RelPermalink }}">{{ $subcategory.Title }}</a>
+        {{ end }}
+        {{ end }}
+    {{ end }}
+
+    </div>
+    <footer class="sidebar-footer"><a class="suggest-link" href="/suggest">suggest something</a></footer>
+</nav>
