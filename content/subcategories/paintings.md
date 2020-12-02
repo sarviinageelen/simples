@@ -9,7 +9,7 @@ products:
   - productName: A Certain Silence
     productMaker: Jim Verburg
     productMakerURL: http://jimverburg.squarespace.com/
-    productURL: http://jimverburg.squarespace.com/work/#/a-certain-silence-1/
+    productURL: http://jimverburg.squarespace.com
   - productURL: https://www.artsy.net/artist/miya-ando
     productMakerURL: http://www.miyaando.com/
     productName: Steel
