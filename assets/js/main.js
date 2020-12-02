@@ -1,4 +1,4 @@
-const Fuse = require('../../node_modules/fuse.js/dist/fuse.basic.min.js');
+const Fuse = require('./fuse.basic.min.js');
 
 document.querySelector('.menu-btn').addEventListener('click', (function () {
   document.body.classList.toggle('sidebar-open'),
