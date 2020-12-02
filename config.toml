@@ -1,3 +1,9 @@
-baseURL = "https://practical-bardeen-a72fe7.netlify.app/"
+baseurl = "/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+languageLang = "en"
+title = "Homepage"
+
+# RSS, categories and tags disabled for an easy start
+# See configuration options for more details: 
+# https://gohugo.io/getting-started/configuration/#toml-configuration
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
