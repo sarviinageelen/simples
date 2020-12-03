@@ -2,7 +2,7 @@
     <main class="grid">
     {{ range $category := where .Site.RegularPages "Section" "categories" }}
 
-        {{ range $subcategory := first 2 (where .Site.RegularPages "Section" "subcategories") }}
+        {{ range $subcategory := first  (where .Site.RegularPages "Section" "subcategories") }}
         {{ if eq $subcategory.Params.category $category.Title }}
         <article class="list-container" data-search="{{ $category.Title }}-{{ $subcategory.Title }}">
             <header class="list-header">
@@ -10,7 +10,7 @@
                 <h2 class="list-subcategory"><a href="{{ $subcategory.RelPermalink }}">{{ $subcategory.Title }}</a></h2>
             </header>
             <ol class="list">
-                {{ range first 1 $subcategory.Params.products }}
+                {{ range first 3 $subcategory.Params.products }}
                 <li class="list-item">
                     <p class="product-name"><a class="product-link" href="{{ safeURL .productURL }}" rel="noopener noreferrer" target="_blank">{{ .productName }}</a></p>
                     <p class="maker-name"><a class="maker-link" href="{{ safeURL .productMakerURL }}" rel="noopener noreferrer" target="_blank">{{ .productMaker }}</a></p>
