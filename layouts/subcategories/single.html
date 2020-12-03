@@ -1,7 +1,7 @@
 {{ define "main" }}
 
     <section class="single-list-container">
-        <article class="list-container" data-search="art-paintings">
+        <article class="list-container" data-search="{{ .Params.category }}-{{ .Title }}">
             <header class="list-header">
                 <h1 class="list-category"><a href="/categories/{{ lower .Params.category }}">{{ .Params.category }}</a></h1>
                 <h2 class="list-subcategory"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
@@ -22,7 +22,7 @@
 
         {{ range $subcategory := where .Site.RegularPages "Section" "subcategories" }}
         {{ if eq $subcategory.Params.category $category.Title }}
-        <article class="list-container" data-search="art-paintings">
+        <article class="list-container" data-search="{{ $category.Title }}-{{ $subcategory.Title }}">
             <header class="list-header">
                 <h1 class="list-category"><a href="{{ $category.RelPermalink }}">{{ $category.Title }}</a></h1>
                 <h2 class="list-subcategory"><a href="{{ $subcategory.RelPermalink }}">{{ $subcategory.Title }}</a></h2>
