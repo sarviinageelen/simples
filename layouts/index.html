@@ -2,7 +2,7 @@
     <main class="grid">
     {{ range $category := where .Site.RegularPages "Section" "categories" }}
 
-        {{ range $subcategory := first  (where .Site.RegularPages "Section" "subcategories") }}
+        {{ range $subcategory := first -1 (where .Site.RegularPages "Section" "subcategories") }}
         {{ if eq $subcategory.Params.category $category.Title }}
         <article class="list-container" data-search="{{ $category.Title }}-{{ $subcategory.Title }}">
             <header class="list-header">
