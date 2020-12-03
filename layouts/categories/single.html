@@ -5,7 +5,7 @@
 
     <main class="grid">
     {{ range where $subcategories "Params.category" .Params.Title}}
-        <article class="list-container" data-search="art-paintings">
+    <article class="list-container" data-search="{{ $category.Title }}-{{ .Title }}">
             <header class="list-header">
                 <h1 class="list-category"><a href="{{ $category.RelPermalink }}">{{ $category.Title }}</a></h1>
                 <h2 class="list-subcategory"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
