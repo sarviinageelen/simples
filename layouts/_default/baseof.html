@@ -20,6 +20,16 @@
 
         {{ $styles := resources.Get "scss/main.scss" | toCSS (dict "outputStyle" "compressed") }}
         <link href="{{ $styles.RelPermalink }}" rel="stylesheet">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-52M09P04RN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-52M09P04RN');
+</script>
 
     </head>
     <body>
