@@ -1,5 +1,5 @@
 ---
-title: Smartphone
+title: Smartphones
 category: Gadgets
 products:
   - productURL: https://www.apple.com/my/iphone-12-pro/
